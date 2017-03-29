@@ -7,6 +7,8 @@ Pic by
 %br
 
 = link_to "Back", root_path
-= link_to "Edit", edit_pic_path
-= link_to "Delete", pic_path, method: :delete, data: { confirm: "Are you sure?" }
+
+- if user_signed_in?
+  = link_to "Edit", edit_pic_path
+  = link_to "Delete", pic_path, method: :delete, data: { confirm: "Are you sure?" }
 
